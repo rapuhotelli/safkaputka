@@ -49,9 +49,7 @@ gulp.task('purge', () => del(['dist/*']));
 gulp.task('sass', () => options.sass());
 
 // JS build
-//gulp.task('scripts', () => options.scripts());
 gulp.task('webpack', callback => options.webpack(callback))
-
 
 // Watch Files For Changes
 gulp.task('watch', () => {

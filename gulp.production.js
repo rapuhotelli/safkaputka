@@ -36,7 +36,14 @@ module.exports = (gulp, paths, imports) => ({
           .pipe(imports.flatten())
           .pipe(gulp.dest(paths.outPoint)),
 
-  scripts: () => gulp.src(paths.scriptEntry)
-          .pipe(imports.webpack(webpackConfig).on('error', e => console.log(e)))
-          .pipe(gulp.dest(paths.outPoint)),
+  webpack: (callback) => {
+    webpackConfig.entry = `./${paths.scriptEntry}`;
+    imports.webpack(webpackConfig, (err, stats) => {
+      if (err) throw new imports.gutil.PluginError('webpack', err);
+      imports.gutil.log('[webpack]', stats.toString({
+        colors: true,
+      }));
+      callback();
+    });
+  },
 });
