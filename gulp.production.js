@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
+const path = require('path');
 
 const webpackConfig = {
   plugins: [
@@ -26,6 +27,7 @@ const webpackConfig = {
   },
   output: {
     filename: 'scripts.js',
+    path: path.join(__dirname, 'dist'),
   },
 };
 

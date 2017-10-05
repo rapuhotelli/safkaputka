@@ -1,9 +1,7 @@
 const gulp = require('gulp');
 const path = require('path');
 const del = require('del');
-
 var gutil = require("gulp-util");
-var webpack = require("webpack");
 
 // CSS
 const sass = require('gulp-sass');
@@ -12,7 +10,7 @@ const sourcemaps = require('gulp-sourcemaps'); // sass sourcemaps
 const flatten = require('gulp-flatten');
 
 // JS
-const webpackStream = require('webpack-stream');
+const webpack = require("webpack");
 const eslint = require('gulp-eslint');
 
 const paths = {
