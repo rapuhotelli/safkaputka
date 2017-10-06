@@ -46,7 +46,7 @@ const fakeHistory = [
 ];
 
 const Main = () => (
-  <div>
+  <div className="main-container">
     <NewSafkaForm />
     <SafkaHistoryList history={fakeHistory} />
   </div>
@@ -55,6 +55,7 @@ const Main = () => (
 export default Main;
 
 /*
+
 export default class Main extends React.Component {
   render() {
     return (

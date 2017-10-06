@@ -5,7 +5,7 @@ const SafkaEntry = ({ name, weight, isGross }) => (
   <div className="safka">
     <div className="safka__name">{name}</div>
     <div className="safka__weight">{weight}</div>
-    <div className="safka__isMeat">{isGross}</div>
+    <div className="safka__isMeat">{isGross ? 'gross' : ''}</div>
   </div>
 );
 
